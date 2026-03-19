@@ -1,3 +1,5 @@
+import profilePhoto from '../assets/profile.jpg'
+
 const Hero = () => {
   return (
     <section className="hero">
@@ -37,7 +39,7 @@ const Hero = () => {
       </div>
       <div className="hero-visual">
         <div className="hero-blob">
-          <div className="hero-initials">NB</div>
+          <img src={profilePhoto} alt="Neha Bhosle" className="hero-photo" />
         </div>
       </div>
     </section>
