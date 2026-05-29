@@ -39,8 +39,13 @@
   transition: color var(--transition);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary);
+}
+
+.nav-links a.active {
+  font-weight: 600;
 }
 
 .hamburger {
