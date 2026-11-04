@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 
 const About = () => {
   const stats = [
-    { number: "3+", label: "Years Experience" },
+    { number: "4+", label: "Years Experience" },
     { number: "10K+", label: "Patients Served" },
     { number: "95+", label: "Lighthouse Score" },
     { number: "2x", label: "Award Winner" },
