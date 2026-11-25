@@ -18,7 +18,10 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState<boolean>(getInitialTheme);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light",
+    );
     localStorage.setItem("theme", isDark ? "dark" : "light");
 
     // Some browsers cache the content behind a backdrop-filter element as a
@@ -80,6 +83,59 @@ const Navbar = () => {
         <Box className="nav-right">
           <Box
             component="button"
+            className={`hamburger ${isOpen ? "active" : ""}`}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation"
+          >
+            <Box component="span" />
+            <Box component="span" />
+            <Box component="span" />
+          </Box>
+          <List
+            component="ul"
+            className={`nav-links ${isOpen ? "active" : ""}`}
+            disablePadding
+            sx={{ listStyle: "none" }}
+          >
+            {navLinks.map((link) => (
+              <ListItem
+                key={link.href}
+                component="li"
+                disablePadding
+                disableGutters
+                sx={{ width: "auto", display: "block" }}
+              >
+                <Box
+                  component="a"
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={
+                    activeSection === link.href.slice(1) ? "active" : ""
+                  }
+                >
+                  {link.label}
+                </Box>
+              </ListItem>
+            ))}
+            <ListItem
+              component="li"
+              disablePadding
+              disableGutters
+              sx={{ width: "auto", display: "block" }}
+            >
+              <Box
+                component="a"
+                href={RESUME_PDF_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleResumeClick}
+              >
+                Resume
+              </Box>
+            </ListItem>
+          </List>
+          <Box
+            component="button"
             className="theme-toggle"
             onClick={() => setIsDark((prev) => !prev)}
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
@@ -122,57 +178,6 @@ const Navbar = () => {
               </svg>
             )}
           </Box>
-          <Box
-            component="button"
-            className={`hamburger ${isOpen ? "active" : ""}`}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle navigation"
-          >
-            <Box component="span" />
-            <Box component="span" />
-            <Box component="span" />
-          </Box>
-          <List
-            component="ul"
-            className={`nav-links ${isOpen ? "active" : ""}`}
-            disablePadding
-            sx={{ listStyle: "none" }}
-          >
-            {navLinks.map((link) => (
-              <ListItem
-                key={link.href}
-                component="li"
-                disablePadding
-                disableGutters
-                sx={{ width: "auto", display: "block" }}
-              >
-                <Box
-                  component="a"
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={activeSection === link.href.slice(1) ? "active" : ""}
-                >
-                  {link.label}
-                </Box>
-              </ListItem>
-            ))}
-            <ListItem
-              component="li"
-              disablePadding
-              disableGutters
-              sx={{ width: "auto", display: "block" }}
-            >
-              <Box
-                component="a"
-                href={RESUME_PDF_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleResumeClick}
-              >
-                Resume
-              </Box>
-            </ListItem>
-          </List>
         </Box>
       </Box>
     </Box>

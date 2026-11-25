@@ -23,7 +23,7 @@ const About = () => {
           <Box className="about-text">
             <Typography variant="aboutText" sx={{ mb: "16px" }}>
               I'm a passionate Software Engineer based in Pune, India, with over
-              3+ years of experience building scalable, user-centric web
+              4+ years of experience building scalable, user-centric web
               applications. I specialize in React, TypeScript, and modern
               frontend technologies.
             </Typography>
