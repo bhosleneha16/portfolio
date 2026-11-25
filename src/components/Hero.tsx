@@ -20,7 +20,7 @@ const Hero = () => {
           variant="heroDescription"
           sx={{ maxWidth: 520, mb: "32px" }}
         >
-          Experienced software engineer with 3+ years in developing scalable,
+          Experienced software engineer with 4+ years in developing scalable,
           user-centric web applications. Proficient in React, TypeScript,
           JavaScript, and modern web technologies.
         </Typography>

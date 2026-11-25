@@ -7,6 +7,7 @@ const Projects = () => {
     {
       title: "RESTORE",
       subtitle: "Healthcare & Rehabilitation Platform",
+      link: "https://restore-insights.com/",
       description:
         "A modern healthcare dashboard serving 10,000+ patients efficiently with a 95+ Lighthouse score.",
       highlights: [
@@ -63,6 +64,32 @@ const Projects = () => {
                     <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                   </svg>
                 </Box>
+                {project.link && (
+                  <Box
+                    component="a"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                    aria-label={`Visit ${project.title} website`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </Box>
+                )}
               </Box>
               <Typography
                 variant="projectTitle"
